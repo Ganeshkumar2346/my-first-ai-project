@@ -28,3 +28,27 @@ A RAG-based application that lets you upload a PDF and ask questions about its c
 
 1. Clone this repo
 2. Install dependencies:
+
+
+## Project 2: Research Assistant Agent
+
+A multi-tool, memory-enabled agent built with LangGraph that decides which tool to use — calculator or word lookup — and can chain multiple tool calls together to answer complex questions.
+
+### How it works
+
+1. User asks a question through the Streamlit UI
+2. The agent (LLM + LangGraph) analyzes the question and decides whether a tool is needed
+3. If needed, it calls the relevant tool (calculator or word definition lookup) and loops back to reassess
+4. This repeats until the agent has enough information to give a final answer
+5. The full reasoning trace (each step) is visible in an expandable section
+
+### Tech Stack
+
+- **LangGraph** — state machine / graph framework for building the agent
+- **LangChain Tools** — `@tool` decorator for defining callable functions the LLM can use
+- **Groq (Llama 3.3 70B)** — LLM powering the agent's decisions
+- **Streamlit** — web UI
+
+### Running Locally
+
+1. Install dependencies:
